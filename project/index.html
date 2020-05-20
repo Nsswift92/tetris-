@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+    <div class="bg"></div>
+    
+    <div class="area" >
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+    </div >
+
+    <div id="tetris">
+       
+        <h1>
+            <span style="color: red">T</span><span style="color: orange">E</span><span style="color: yellow">T</span><span style="color: green">R</span><span style="color: cyan">I</span><span style="color: purple">S</span>
+        </h1> 
+
+        <div class="audio">
+            <img src="/media/icons8-play-в-круге-60 (1).png" alt="" onclick="playAudio()" type="button">
+            <img src="/media/icons8-пауза-60.png" alt="" onclick="pauseAudio()" type="button">
+        </div>
+
+    </div>
+
+    <audio id="myAudio">
+        <source src="/media/GASTDASH - Tetris Theme (Remix) (musicpro.me).mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+
+        var x = document.getElementById("myAudio"); 
+        
+        function playAudio() { 
+            x.play(); 
+        } 
+        
+        function pauseAudio() { 
+            x.pause(); 
+        } 
+
+    </script>
+
+    <script src="./index.js" type="module"></script>
+
+</body>
+</html>

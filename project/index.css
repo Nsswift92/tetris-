@@ -1,0 +1,274 @@
+body {
+    margin: 0;
+    background-color: rgb(8, 0, 39);
+    box-sizing: border-box;
+}
+
+#tetris {
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+
+#tetris h1 {
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', Consolas, monospace;
+    color: white;
+
+}
+
+#tetris canvas {
+    display: block;
+    width: 80%;
+    max-width: 320px;
+    height: 80%;
+    max-height: 640px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+embed {
+    display: none;
+    box-sizing: border-box;
+}
+
+span {
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 60px;
+    letter-spacing: -7px;
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: blur 2s ease-out infinite;
+    text-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff;
+}
+
+@keyframes blur {
+  from {
+    text-shadow:0px 0px 3px rgb(255, 255, 255),
+      0px 0px 3px #fff, 
+      0px 0px 5px #fff,
+      0px 0px 5px #fff,
+      0px 0px 5px #fff,
+      0px 0px 5px #fff,
+      0px 0px 5px #fff,
+      0px 0px 5px #fff,
+      0px 0px 6px #fff,
+      0px 0px 6px #fff,
+      0px 0px 6px rgb(255, 255, 255),
+      0px 0px 8px rgb(255, 207, 207),
+      0px 3px 10px rgb(255, 201, 201),
+      0px 3px 10px rgb(255, 225, 225),
+      0px 3px 10px rgb(255, 179, 179),
+      0px 3px 10px rgb(255, 194, 202),
+      0px -3px 10px rgb(255, 255, 255),
+      0px -3px 10px rgb(255, 178, 195);
+  }
+}
+
+.circles{
+    box-sizing: border-box;
+    margin: 0;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 35%;
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 255, 255, 0.418);
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    background: #6b81ff9c;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    background: #ffba527a;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 46%;
+    width: 60px;
+    height: 60px;
+    background: #ffff7d77;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    background: #82ffa89f;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 15%;
+    width: 110px;
+    height: 110px;
+    background: #b56bffaf;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 55%;
+    width: 150px;
+    height: 150px;
+    background: #ff4d4d94;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    background: rgba(255, 130, 238, 0.452)
+    animation-delay 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    background: rgba(0, 255, 76, 0.637);
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    background: rgba(68, 0, 255, 0.747);
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+.bg {
+    position: fixed;
+    z-index: -2;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('media/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    visibility: visible;
+  }
+  
+  @keyframes bg-animation {
+      0% { transform: translate(0,0) }
+      10% { transform: translate(-5%,-5%) }
+      20% { transform: translate(-10%,5%) }
+      30% { transform: translate(5%,-10%) }
+      40% { transform: translate(-5%,15%) }
+      50% { transform: translate(-10%,5%) }
+      60% { transform: translate(15%,0) }
+      70% { transform: translate(0,10%) }
+      80% { transform: translate(-15%,0) }
+      90% { transform: translate(10%,5%) }
+      100% { transform: translate(5%,0) }
+  }
+
+  .audio {
+      margin: auto;
+  }
+
+  .audio img {
+      width: 50px;
+      opacity: .3;
+  }
+
+  .audio img:hover {
+    opacity: 1;
+}
+
+.audio img:active {
+    opacity: .1;
+}
+
+@media only screen and (max-height: 360px){
+    #tetris {
+        box-sizing: border-box;
+        padding: 0;
+        text-align: center;
+    }
+    
+    #tetris canvas {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        width: 40%;
+        max-width: 255px;
+        height: 100%;
+        max-height: 350px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    #tetris h1 {
+        position: absolute;
+        left: 5px;
+    }
+
+    .audio {
+        position: absolute;
+        top: 100px;
+        left: 10%;
+    }
+   
+}
+
